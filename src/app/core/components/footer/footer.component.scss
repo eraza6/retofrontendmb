@@ -1,0 +1,82 @@
+.container {
+  max-width: 1400px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.site-footer {
+  background-color: #009330;
+  padding: 33px 0 90px;
+  font-size: 15px;
+  line-height: 24px;
+  color: #737373;
+   position: relative;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+
+}
+
+.site-footer .logo-wrapper div {
+  font-size: 16px;
+  line-height: 1;
+}
+
+.site-footer .logo-wrapper p {
+  font-size: 14px;
+  line-height: 22px;
+  margin-top: 22px;
+  color: #fff;
+}
+
+.site-footer .widgets-wrapper {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 40px;
+  margin-top: 20px;
+}
+
+.site-footer .widget .title {
+  font-size: 20px;
+  margin-bottom: 16px;
+  color: #FFD100;
+}
+
+.site-footer ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+.site-footer .widget ul li {
+  margin-bottom: 16px;
+  font-size: 16px;
+  color: #fff;
+}
+
+.site-footer a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.site-footer .widget .book {
+  vertical-align: top;
+  margin-left: 16px;
+}
+
+a {
+  cursor: pointer;
+}
+
+@media (max-width: 650px) {
+  .site-footer {
+    position: relative;
+  }
+
+  .site-footer .widgets-wrapper {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}

@@ -1,0 +1,22 @@
+<div class="wrapper">
+  <div class="wrapper-progress">
+    <img src="assets/icons/ic-asesor.svg">
+    <div class="container">
+      @if(data.resultType == 1){
+      <div class="title">{{data.name}}</div>
+      <div class="subtitle">ya cuentas con una solicitud en proceso.</div>
+      <div class="description">Te contactaremos vía llamada o correo para continuar con la evaluación. Gracias por
+        confiar en Mibanco.</div>
+      } @else {
+      <div class="title">{{data.name}}</div>
+      <div class="subtitle">por el momento no tenemos una oferta para ti.</div>
+      <div class="description">Por ahora, te invitamos a acercarte a nuestra red de agencias para realizar tu solicitud.
+      </div>
+      }
+      <div class="button-wrapper">
+        <button type="button" (click)="goWelcome()" class="primary"> Ir al inicio</button>
+      </div>
+    </div>
+
+  </div>
+</div>

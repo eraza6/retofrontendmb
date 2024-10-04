@@ -1,0 +1,131 @@
+@if (!resultShowView) {
+<div class="wrapper">
+  <div class="wrapper-welcome">
+    <div class='row'>
+      <div class='column'>
+        <div class='one-column'>
+
+        </div>
+      </div>
+      <div class='column'>
+        <div class='two-column'>
+          <div class="form-credit">
+            <div class="clip">Mi Efectivo Semilla</div>
+            <div class="title">Solicita tu Préstamo </div>
+            <div class="title">100% online:</div>
+            <form [formGroup]="welcomeForm">
+
+              <div class="field">
+                <div class="input-field">
+                  <select class="card-input__input select">
+                    <option value="" disabled selected>DNI</option>
+                  </select>
+                  <div class="input-field-doc">
+                    <!-- Se puso el inpout tipo text por que no puede comenzar con un numero 0 el tipo number-->
+                    <input type="text" pattern="[0-9]+" oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+                      formControlName="numDoc" placeholder="Nro. de documento*" minlength="8" maxlength="8" />
+                  </div>
+                </div>
+                @if (welcomeForm.controls.numDoc.hasError('maxlength')) {
+                <span class="error">
+                  <p class="error-text">Introduzca una cantidad máxima de 8 caracteres</p>
+                </span>
+                } @if (welcomeForm.controls.numDoc.hasError('minlength')) {
+                <span class="error">
+                  <p class="error-text">Introduzca una cantidad mínima de 8 caracteres</p>
+                </span>
+                } @if (welcomeForm.controls.numDoc.hasError('required') && welcomeForm.controls.numDoc.touched) {
+                <span class="error">
+                  <p class="error-text">Dni es requerido</p>
+                </span>
+                } @if (welcomeForm.controls.numDoc.hasError('excludedNumber') && welcomeForm.controls.numDoc.touched) {
+                <span class="error">
+                  <p class="error-text">No puedes ingresar este número</p>
+                </span>
+                }
+              </div>
+              <div class="field">
+                <div class="input-field">
+                  <input type="text" formControlName="names" placeholder="Nombre Completo" />
+                </div>
+
+                @if (welcomeForm.controls.names.hasError('required') && welcomeForm.controls.names.touched ) {
+                <span class="error">
+                  <p class="error-text">Nombre es requerido</p>
+                </span>
+                }
+              </div>
+
+              <div class="field">
+                <div class="input-field">
+                  <input type="number" min="100" max="2000" formControlName="amount"
+                    placeholder="Monto a solicitar (S/)" pattern="[0-9]+"
+                    oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+                </div>
+                @if (welcomeForm.controls.amount.hasError('required') && welcomeForm.controls.amount.touched) {
+                <span class="error">
+                  <p class="error-text">Monto es requerido</p>
+                </span>
+                } @if (welcomeForm.controls.amount.hasError('min') && welcomeForm.controls.amount.touched) {
+                <span class="error">
+                  <p class="error-text">El monto debe ser mayor o igual a 100</p>
+                </span>
+                } @if (welcomeForm.controls.amount.hasError('max') && welcomeForm.controls.amount.touched) {
+                <span class="error">
+                  <p class="error-text"> El monto debe ser menor o igual a 2000.</p>
+                </span>
+                }
+              </div>
+
+              <div class="checkbox">
+                <input type="checkbox" formControlName="checkboxTerms" />
+                <label>He leído y entendido el <span class="tdp">Consentimiento informado para el Tratamiento de Datos
+                    Personales.</span></label>
+              </div>
+
+              <div class="button-wrapper">
+                <button type="button" class="primary" [disabled]="!this.welcomeForm.valid" (click)="onSubmit()">
+                  Continuar
+                </button>
+              </div>
+
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrapper-benefit">
+    <h3>Beneficios del préstamo Mi Efectivo Semilla</h3>
+    <div class="container-benefit">
+      <div class="benefit">
+
+        <div class="benefit-img">
+          <img src="assets/icons/ic-bill.svg" />
+        </div>
+        <div class="benefit-description">
+          <p class="title">Solicita hasta S/ 2,000</p>
+          <a class="subtitle">Con la flexibilidad de pagar en un plazo de hasta 12 meses.</a>
+        </div>
+      </div>
+      <div class="benefit">
+
+        <div class="benefit-img">
+          <img src="assets/icons/ic-hands.svg" />
+        </div>
+
+        <div class="benefit-description">
+          <p class="title">Obténlo 100% online</p>
+          <a class="subtitle">Desde donde estés en minutos y te evaluaremos de forma digital.</a>
+        </div>
+      </div>
+    </div>
+
+
+  </div>
+</div>
+} @else {
+<!-- Si es true cargara el componente del resultado-->
+<app-result [data]="dataProgress"></app-result>
+}

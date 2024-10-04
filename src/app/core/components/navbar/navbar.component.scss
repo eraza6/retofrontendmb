@@ -1,0 +1,108 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0px;
+  font-family: 'segoe ui';
+}
+
+.nav {
+  height: 96px;
+  width: 100%;
+  background-color: #009330;
+  position: relative;
+
+}
+
+.nav>.nav-header {
+  display: inline;
+
+  img {
+    margin-top: 18px;
+    margin-left: 80px;
+  }
+}
+
+.nav>.nav-header>.nav-title {
+  display: inline-block;
+  font-size: 22px;
+  color: #fff;
+  padding: 10px 10px 10px 10px;
+}
+
+.nav>.nav-btn {
+  display: none;
+}
+
+.nav>.nav-links {
+  display: inline;
+  float: right;
+  font-size: 18px;
+}
+
+.nav>.nav-links>a {
+  display: inline-block;
+  padding: 13px 10px 13px 10px;
+  text-decoration: none;
+  color: #efefef;
+}
+
+.nav>.nav-links>a:hover {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+.nav>#nav-check {
+  display: none;
+}
+
+.button-wrapper {
+  display: flex;
+  margin-top: 25px;
+  justify-content: center;
+  margin-right: 100px;
+
+  button {
+    width: 144px;
+    height: 50px;
+    border-radius: 24px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &.primary {
+      background-color: #009330;
+      border: 1px solid #fff;
+    }
+
+    img {
+      vertical-align: bottom;
+    }
+  }
+}
+
+@media (max-width:600px) {
+  .button-wrapper {
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+    margin-right: 20px;
+    button {
+      width: 122px;
+      height: 42px;
+      border-radius: 22px;
+      font-size: 14px;
+    }
+  }
+
+  .nav>.nav-header {
+    display: inline;
+
+    img {
+      margin-top: 18px;
+      margin-left: 20px;
+    }
+  }
+}
