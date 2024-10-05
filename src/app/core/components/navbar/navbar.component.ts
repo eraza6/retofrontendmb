@@ -28,7 +28,7 @@ export class NavbarComponent {
   goWelcome() {
     this.router.navigate([
       ROUTES.APP.WELCOME.FULL_PATH
-    ]);
+    ], { replaceUrl: true });
   }
 
 }
