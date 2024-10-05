@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Router } from '@angular/router';
 import { ROUTES } from './../../models/routers';
 @Component({
@@ -15,15 +15,7 @@ export class NavbarComponent {
     private router: Router,
   ) { 
     this.urlPath = location.pathname;
-    switch (this.urlPath) {
-			case '/inicio':
-				this.showButton = false
-        break;
-			default:
-				this.showButton = true
-				break;
-		}
-    console.log("urlPath", this.urlPath)
+    this.showButton = this.urlPath == "/inicio" ? this.showButton = false : this.showButton = true;
   }
 
   goWelcome() {

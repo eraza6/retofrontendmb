@@ -16,6 +16,8 @@ export class FooterComponent {
   goToCalculator() {
     this.router.navigate([
       ROUTES.APP.CALCULATOR.FULL_PATH
-    ]);
+    ]).then(() => {
+      window.location.reload();
+    });
   }
 }
