@@ -23,6 +23,7 @@ export class NavbarComponent {
 				this.showButton = true
 				break;
 		}
+    console.log("urlPath", this.urlPath)
   }
 
   goWelcome() {
