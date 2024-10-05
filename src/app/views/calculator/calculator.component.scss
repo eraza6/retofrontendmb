@@ -1,0 +1,148 @@
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+  background-color: #ecf7ef;
+}
+
+.wrapper-calculator {
+  width: 384px;
+  margin: 0 auto;
+  padding: 85px 0;
+
+  .title {
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32.68px;
+    text-align: center;
+
+  }
+
+  .description {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 21.79px;
+    text-align: center;
+    margin-top: 16px;
+
+  }
+
+  .amountValue {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
+.clip {
+  background-color: #009FF9;
+  display: inline-block;
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 16px;
+  line-height: 22px;
+  font-weight: 700;
+  margin: 16px 0;
+  color: #fff;
+
+  &.opacityClip {
+    opacity: 0.7;
+  }
+}
+
+.button-wrapper {
+  margin: 16px 0;
+  justify-content: center;
+
+  button {
+    width: 383px;
+    height: 48px;
+    border-radius: 24px;
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    cursor: pointer;
+
+    &.primary {
+      background-color: #009330;
+      border: 0;
+    }
+  }
+}
+
+.field {
+  margin-bottom: 16px;
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.currency-symbol {
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 32px;
+  font-weight: 700;
+}
+
+input[type="number"] {
+  padding-left: 30px;
+  /* Espacio para el símbolo */
+}
+
+.input-field {
+  position: relative;
+  height: 56px;
+  width: 100%;
+}
+
+.input-field input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  border-radius: 8px;
+  padding: 0 15px;
+  font-size: 32px;
+  line-height: 43.58px;
+  font-weight: 700;
+  color: #76808A;
+  text-align: center;
+}
+
+input::placeholder {
+  text-align: center;
+  font-size: 32px;
+  line-height: 43.58px;
+  font-weight: 700;
+  color: #76808A;
+
+  .currency-symbol {
+    display: none;
+  }
+}
+
+@media (max-width:600px) {
+  .wrapper-calculator {
+    width: 100%;
+    padding: 60px 20px;
+  }
+
+  button {
+    width: 100% !important;
+  }
+
+  .input-field input {
+    padding: 0 15px;
+    font-size: 20px;
+    line-height: 30.58px;
+  }
+
+  input::placeholder {
+    font-size: 20px;
+    line-height: 30.58px;
+  }
+}

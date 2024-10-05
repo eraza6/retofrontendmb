@@ -1,1 +1,60 @@
-<p>calculator works!</p>
+<div class="wrapper">
+  <div class="wrapper-calculator">
+    <div class="title">Calculadora Tipo de Cambio</div>
+    <p class="description">Escribe el monto que deseas convertir*💰</p>
+    <div class="amountValue">
+      <!-- Cambiar dependiendo si le da en comprar o vender -->
+      @if(this.changeViewType() == 1) {
+      <div class="clip">Compra: S/. {{buyRate | number: '1.3-3'}}</div>
+      <div class="clip opacityClip">Venta: S/. {{sellRate | number: '1.3-3'}}</div>
+      } @if(this.changeViewType() == 2) {
+      <div class="clip">Venta: S/. {{sellRate | number: '1.3-3'}}</div>
+      <div class="clip opacityClip">Compra: S/. {{buyRate | number: '1.3-3'}}</div>
+      }
+
+    </div>
+    @if(this.changeViewType() == 1) {
+    <div class="field">
+      <div class="input-field">
+        <input type="number" [(ngModel)]="amountUSD" (input)="convertToPEN()" placeholder="0.0" pattern="[0-9]+"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+        <span class="currency-symbol">$/</span>
+      </div>
+    </div>
+    }
+    @if(this.changeViewType() == 2) {
+    <div class="field">
+      <div class="input-field">
+        <input type="number" [(ngModel)]="amountPEN" (input)="convertToUSD()" placeholder="0.0" pattern="[0-9]+"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+        <span class="currency-symbol">S/</span>
+      </div>
+    </div>
+    }
+
+    <div class="button-wrapper">
+      <button (click)="changeValues()" type="button" class="primary">
+        Change
+      </button>
+    </div>
+
+    @if(this.changeViewType() == 1){
+    <div class="field">
+      <div class="input-field">
+        <input type="number" [(ngModel)]="amountPEN" (input)="convertToUSD()" placeholder="0.0" pattern="[0-9]+"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+        <span class="currency-symbol">S/</span>
+      </div>
+    </div>
+    }
+    @if(changeViewType() == 2){
+    <div class="field">
+      <div class="input-field">
+        <input type="number" [(ngModel)]="amountUSD" (input)="convertToPEN()" placeholder="0.0" pattern="[0-9]+"
+          oninput="this.value = this.value.replace(/[^0-9]/g, '')" />
+        <span class="currency-symbol">$/</span>
+      </div>
+    </div>
+    }
+  </div>
+</div>
