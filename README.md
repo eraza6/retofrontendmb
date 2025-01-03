@@ -1,7 +1,7 @@
 # Retofrontmb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.2.6.
-and realized by Elvis Raza
+Este es un reto de frontend para la postulación de puesto Frontend usando algunas nuevas caracteristicas de Angular 18 donde nos dieron el diseño Figma que propuso la empresa; el cual, tuve que desplegar en netlify:
+https://elvis-raza.netlify.app/inicio
 
 ## Development server
 
